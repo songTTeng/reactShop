@@ -1,0 +1,218 @@
+*{
+  margin:0;padding:0;
+  box-sizing:border-box;
+  -moz-box-sizing:border-box; /* Firefox */
+  -webkit-box-sizing:border-box;
+}
+body,html{
+  font-family:"微软雅黑";
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  input[type=text]::-ms-clear { 
+    display: none; 
+  }  /* 去除IE输入框的X标记 */
+  input[type=password]::-ms-reveal { 
+    display: none; 
+  } /* 去除IE输入框的小眼睛标记 */
+}
+#root{
+  height: 100%;
+  background: #f5f5f5!important;
+}
+ul,li,p,dl,dt,dd,h1,h2,h3,h4,h5,h6{
+  margin:0;
+  padding:0;
+}
+a{
+  text-decoration:none;
+  color:#333;
+  cursor:pointer;
+}
+a:link{
+  text-decoration:none; 
+}
+ul,li{
+  outline:none;
+  list-style:none;
+}
+div,table{
+  outline:none;
+}
+.clearfix:after{
+  content:"";
+  height:0;
+  clear:both;
+  overflow:hidden;
+  visibility:hidden;
+  display:block;
+}
+textarea{
+  resize:none;
+}
+//滚动条样式
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #c2c2c2;
+  background-clip: padding-box;
+  border: 1px solid #979797;
+  min-height: 28px;
+}
+::-webkit-scrollbar-thumb:hover {
+  border: 1px solid #636363;
+  background-color: #929292;
+}
+/* 滚动条背景基本样式 MOZ*/
+scrollbar {
+  -moz-appearance: none !important;
+  background-color: transparent !important; /* 滚动条背景透明 */
+  background-image: none !important; /* 滚动条背景图案不显示 */
+  position: relative !important; /* 更改滚动条的定位方式为相对 */
+  overflow: hidden !important;
+  z-index: 999999999 !important; /* 把滚动条提到Z轴最上层 */
+}
+scrollbar[orient="vertical"] {
+  margin-left: -5px !important;
+  min-width: 5px !important;
+  max-width: 5px !important;
+}
+/* 滚动条按钮基本样式 */
+scrollbar thumb {
+  -moz-appearance: none !important;
+  background-color: rgba(0, 100, 255, .25) !important;
+  border-radius: 0px !important;
+  border: 1px !important; /* 滚动条按钮边框 */
+  border-color: rgba(0, 100, 255, .1) !important; /* 滚动条按钮边框颜色和透明度 */
+}
+/* 滚动条按钮:鼠标悬停与点击拖动时基本样式 */
+scrollbar:hover thumb,
+scrollbar thumb:hover,
+scrollbar thumb:active {
+  background-color: rgba(0, 100, 255, .75) !important;
+  border: 0px !important;
+}
+
+/*公用头部分样式*/
+// .main-top{
+//   border-bottom: 1px solid #ddd;
+//   height: 60px;
+//   line-height: 60px;
+//   padding:0 10px;
+//   .thtext {
+//       font-size: 16px;
+//       font-weight: 700;
+//       color: #1d1c26;
+//       height: 60px;
+//       width: 40%;
+//       float: left;
+//       .blue-line{
+//         margin-left: 14px;
+//         color: #1d1c26;
+//         border-bottom: 2px solid #05cbd8;
+//         padding-bottom: 17px
+//       }
+//   }
+  // .thbtn{
+  //     font-size: 14px;
+  //     width: 60%;
+  //     float: left;
+  //     text-align: right;
+  // }
+  // dl{
+  //     display: inline-block;
+  //     height: 60px;
+  //     margin-right: 15px;
+  //     margin-bottom: 0;
+  //     text-align: center;
+  //     cursor: pointer;
+  //     dt{
+  //         float: left;
+  //         img{
+  //           vertical-align: text-bottom;
+  //         }
+  //     }
+  //     dd{
+  //         user-select: none;
+  //         display: inline-block;
+  //         font-size: 14px;
+  //         color: #37d5e0;
+  //         line-height: 60px;
+  //         height: 60px;
+  //         margin-left: 5px;
+  //         margin-bottom: 0;
+  //     }
+  // }
+// }
+
+
+/**修改组件自带的样式**/
+//修改查询条件样式 
+// .ant-advanced-search-form {    
+//   padding: 24px;
+// }
+// .ant-advanced-search-form .ant-form-item {   //让lable和input在同一行
+//   display: flex;
+// }
+// .SearchFrom .ant-advanced-search-form .ant-form-item{
+//    margin-bottom: 10px!important;
+// }
+// .ant-advanced-search-form .ant-form-item-control-wrapper {
+//   flex: 1;
+// }
+
+
+//修改表格样式
+// .main{
+//   height: 90%;
+//   .SearchFrom{
+//     padding: 10px 10px;
+//     overflow-x: hidden;
+//     overflow-y: scroll;
+//     height: 100%;
+//     .queryForm{
+//       padding: 0 12px;
+//     }
+//   }
+//   .table{
+//     padding: 0 10px;
+//     margin-top: 20px;
+//   }
+//   .pagination{
+//     margin: 20px 20px;
+//   }
+//   p{
+//     margin: 0;
+//   }
+// }
+// .ant-table-thead > tr > th, .ant-table-tbody > tr > td{
+//   padding: 8px 8px!important;
+// }
+//分页样式
+// .ant-table-pagination.ant-pagination{
+//     margin-right: 50px!important;
+// }
+// .ant-table-placeholder{
+//   border-top: 1xp solid #e8e8e8;
+//   padding: 60px 16px;
+// }
+// .actionDiv{
+//    span{
+//     cursor: pointer;
+//     display: inline-block;
+//     margin-right: 10px;
+//    }
+//   .detail_icon{
+//     color: #37d5e0;
+//   }
+//   .edit_icon{
+//     color: #37d5e0;
+//   }
+//   .delete_icon{
+//     color: #f00;
+//   }
+// }
+
