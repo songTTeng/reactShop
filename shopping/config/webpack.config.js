@@ -396,6 +396,8 @@ module.exports = function(webpackEnv) {
                 sourceMap: isEnvProduction
                   ? shouldUseSourceMap
                   : isEnvDevelopment,
+                  //modules:true,   //开启css模块化
+                  //localIdentName:"[local]-[hash:base64:6]"
               }),
               // Don't consider CSS imports dead code even if the
               // containing package claims to have no side effects.

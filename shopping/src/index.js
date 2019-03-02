@@ -1,3 +1,6 @@
+import "babel-polyfill";
+import "url-search-params-polyfill"; //兼容ie
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import RouterComponent from './router';

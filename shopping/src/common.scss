@@ -4,97 +4,124 @@
   -moz-box-sizing:border-box; /* Firefox */
   -webkit-box-sizing:border-box;
 }
-body,html{
-  font-family:"微软雅黑";
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  input[type=text]::-ms-clear { 
-    display: none; 
-  }  /* 去除IE输入框的X标记 */
-  input[type=password]::-ms-reveal { 
-    display: none; 
-  } /* 去除IE输入框的小眼睛标记 */
-}
-#root{
-  height: 100%;
-  background: #f5f5f5!important;
-}
-ul,li,p,dl,dt,dd,h1,h2,h3,h4,h5,h6{
-  margin:0;
-  padding:0;
-}
-a{
-  text-decoration:none;
-  color:#333;
-  cursor:pointer;
-}
-a:link{
-  text-decoration:none; 
-}
 ul,li{
   outline:none;
   list-style:none;
 }
-div,table{
-  outline:none;
+body,html{
+  font-size: 20px!important;
+  min-height: 100%;
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: rgba(0,0,0,0); /*禁止连接高亮*/
+  -webkit-touch-callout: none;/*禁止连接长按弹出选项*/
 }
-.clearfix:after{
-  content:"";
-  height:0;
-  clear:both;
-  overflow:hidden;
-  visibility:hidden;
-  display:block;
+@media screen and (min-width:400px){
+  //换算 x * 20 / 375 
+  html,body{
+    font-size:21.3px!important;
+  }
 }
-textarea{
-  resize:none;
+@media screen and (min-width:414px){
+  html,body{
+    font-size:22.08px!important;
+  }
 }
-//滚动条样式
-::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
+@media screen and (min-width:480px){
+  html,body{
+    font-size:25.6px!important;
+  }
 }
-::-webkit-scrollbar-thumb {
-  border-radius: 5px;
-  background-color: #c2c2c2;
-  background-clip: padding-box;
-  border: 1px solid #979797;
-  min-height: 28px;
-}
-::-webkit-scrollbar-thumb:hover {
-  border: 1px solid #636363;
-  background-color: #929292;
-}
-/* 滚动条背景基本样式 MOZ*/
-scrollbar {
-  -moz-appearance: none !important;
-  background-color: transparent !important; /* 滚动条背景透明 */
-  background-image: none !important; /* 滚动条背景图案不显示 */
-  position: relative !important; /* 更改滚动条的定位方式为相对 */
-  overflow: hidden !important;
-  z-index: 999999999 !important; /* 把滚动条提到Z轴最上层 */
-}
-scrollbar[orient="vertical"] {
-  margin-left: -5px !important;
-  min-width: 5px !important;
-  max-width: 5px !important;
-}
-/* 滚动条按钮基本样式 */
-scrollbar thumb {
-  -moz-appearance: none !important;
-  background-color: rgba(0, 100, 255, .25) !important;
-  border-radius: 0px !important;
-  border: 1px !important; /* 滚动条按钮边框 */
-  border-color: rgba(0, 100, 255, .1) !important; /* 滚动条按钮边框颜色和透明度 */
-}
-/* 滚动条按钮:鼠标悬停与点击拖动时基本样式 */
-scrollbar:hover thumb,
-scrollbar thumb:hover,
-scrollbar thumb:active {
-  background-color: rgba(0, 100, 255, .75) !important;
-  border: 0px !important;
-}
+// body,html{
+//   font-family:"微软雅黑";
+//   margin: 0;
+//   padding: 0;
+//   height: 100%;
+//   input[type=text]::-ms-clear { 
+//     display: none; 
+//   }  /* 去除IE输入框的X标记 */
+//   input[type=password]::-ms-reveal { 
+//     display: none; 
+//   } /* 去除IE输入框的小眼睛标记 */
+// }
+// #root{
+//   height: 100%;
+//   background: #f5f5f5!important;
+// }
+// ul,li,p,dl,dt,dd,h1,h2,h3,h4,h5,h6{
+//   margin:0;
+//   padding:0;
+// }
+// a{
+//   text-decoration:none;
+//   color:#333;
+//   cursor:pointer;
+// }
+// a:link{
+//   text-decoration:none; 
+// }
+// ul,li{
+//   outline:none;
+//   list-style:none;
+// }
+// div,table{
+//   outline:none;
+// }
+// .clearfix:after{
+//   content:"";
+//   height:0;
+//   clear:both;
+//   overflow:hidden;
+//   visibility:hidden;
+//   display:block;
+// }
+// textarea{
+//   resize:none;
+// }
+// //滚动条样式
+// ::-webkit-scrollbar {
+//   width: 5px;
+//   height: 5px;
+// }
+// ::-webkit-scrollbar-thumb {
+//   border-radius: 5px;
+//   background-color: #c2c2c2;
+//   background-clip: padding-box;
+//   border: 1px solid #979797;
+//   min-height: 28px;
+// }
+// ::-webkit-scrollbar-thumb:hover {
+//   border: 1px solid #636363;
+//   background-color: #929292;
+// }
+// /* 滚动条背景基本样式 MOZ*/
+// scrollbar {
+//   -moz-appearance: none !important;
+//   background-color: transparent !important; /* 滚动条背景透明 */
+//   background-image: none !important; /* 滚动条背景图案不显示 */
+//   position: relative !important; /* 更改滚动条的定位方式为相对 */
+//   overflow: hidden !important;
+//   z-index: 999999999 !important; /* 把滚动条提到Z轴最上层 */
+// }
+// scrollbar[orient="vertical"] {
+//   margin-left: -5px !important;
+//   min-width: 5px !important;
+//   max-width: 5px !important;
+// }
+// /* 滚动条按钮基本样式 */
+// scrollbar thumb {
+//   -moz-appearance: none !important;
+//   background-color: rgba(0, 100, 255, .25) !important;
+//   border-radius: 0px !important;
+//   border: 1px !important; /* 滚动条按钮边框 */
+//   border-color: rgba(0, 100, 255, .1) !important; /* 滚动条按钮边框颜色和透明度 */
+// }
+// /* 滚动条按钮:鼠标悬停与点击拖动时基本样式 */
+// scrollbar:hover thumb,
+// scrollbar thumb:hover,
+// scrollbar thumb:active {
+//   background-color: rgba(0, 100, 255, .75) !important;
+//   border: 0px !important;
+// }
 
 /*公用头部分样式*/
 // .main-top{

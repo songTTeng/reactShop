@@ -3,7 +3,7 @@ import "./index.scss";
 export default class IndexComponent extends React.Component{
   render(){
       return(
-            <div>
+            <div className="div">
                 这是首页1
             </div>
       )
