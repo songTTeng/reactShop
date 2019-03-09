@@ -1,11 +1,9 @@
 import React from 'react';
-import {HashRouter as Router,Route,Switch} from "react-router-dom";
-//import {PrivateRoute} from "./routers/private"
+import {HashRouter as Router,Route,Switch,Redirect} from "react-router-dom";
 import AsyncComponents from './components/async/asyncComponent';  //优化路由异步加载
-//路由管理
-const IndexComponent=AsyncComponents(()=>import('./pages/home/index/index.jsx')); //导入路由
-const Login = AsyncComponents(()=>import('./pages/login/login.jsx')); //导入路由
-
+import config from './assets/js/conf/config.js'; //地址管理
+//路由管理  (二级路由页面)
+const HomeComponent=AsyncComponents(()=>import('./pages/home/home/index.jsx'));
 
 class RouterComponent extends React.Component{
   render(){
@@ -14,8 +12,10 @@ class RouterComponent extends React.Component{
         <Router>
           <React.Fragment>
             <Switch>
-              <Route exact path="/" component={IndexComponent}></Route>
-              <Route path="/login" component={Login}></Route>
+                {/* 控制home页面的路由 */}
+                <Route path={config.path+"home"} component={HomeComponent} ></Route>
+                {/* Redirect默认进入到这个页面 */}
+                <Redirect to={config.path+"home/index"}></Redirect>    
             </Switch>
           </React.Fragment>
         </Router>

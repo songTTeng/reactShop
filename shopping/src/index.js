@@ -1,11 +1,12 @@
 //入口文件
-import "babel-polyfill";
-import "url-search-params-polyfill"; //兼容ie
 import React from 'react';
 import ReactDOM from 'react-dom';
+import "babel-polyfill";
+import "url-search-params-polyfill"; //兼容ie
+import "whatwg-fetch" //使用fatch
 import {createStore,combineReducers} from "redux";//需要在入口文件引入
-import {Provider} from "react-redux"; //需要在入口文件引入 
-import RouterComponent from './router';
+import {Provider} from "react-redux"; // Provuder的作用将仓库的值分配给组件 
+import RouterComponent from './router'; //所有的路由
 import * as serviceWorker from './serviceWorker';
 import "./common.scss"; //公用的样式
 //2.商品装车 相当于储存 (加减数据)
@@ -27,8 +28,10 @@ let userState={
 } 
 function userReducer(state=userState,action){
     switch(action.type){
-         case "Login":
-             return {uid:action.uid,name:action.name,isLogin:action.isLogin};   
+        case "Login":
+            return {uid:action.uid,name:action.name,isLogin:action.isLogin};  
+        case "outLogin":
+            return {uid:"",name:"",isLogin:false};        
          default:
             return state;
     }

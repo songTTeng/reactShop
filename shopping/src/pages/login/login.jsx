@@ -19,12 +19,14 @@ class Login extends React.Component{
         localStorage["name"] = this.state.name;
         localStorage["uid"] = 1;
         //this.replacePage("/");
-      this.props.dispatch({
-          type:"Login",
-          uid:localStorage["uid"],
-          name:this.state.name,
-          isLogin:true
-      })
+        this.props.dispatch({type:"Login",uid:localStorage["uid"],name:this.state.name,isLogin:true})
+    }
+    outLogin(){
+        localStorage.removeItem("isLogin");
+        localStorage.removeItem("name");
+        localStorage.removeItem("uid");
+        this.props.dispatch({type:"outLogin"}) 
+        this.replacePage("/");
     }
     render(){
         return(
@@ -33,7 +35,8 @@ class Login extends React.Component{
                 昵称：<input type="text" onChange={(e) =>{this.setState({name:e.target.value})}}/> <br/>
                显示昵称：{this.state.name}
                <Login2></Login2>
-               <button type="button" onClick={this.onLogin.bind(this)}>登录</button>
+               <button type="button" onClick={this.onLogin.bind(this)}>登录</button> <br/>
+               <button type="button" onClick={this.outLogin.bind(this)}>退出</button>
             </div>
         )
     }

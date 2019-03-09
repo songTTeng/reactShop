@@ -1,13 +1,12 @@
 import React from 'react';
-import "./index.scss";
-export default class  IndexComponent extends React.Component{
+export default class  CartIndex extends React.Component{
     componentDidMount(){
 
     }
     render(){
         return(
             <div>
-                首页
+                购物车
             </div>
         );
     }
